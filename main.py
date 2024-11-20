@@ -3,7 +3,11 @@ from pydantic import BaseModel
 import requests
 import os
 app = FastAPI()
+import uvicorn
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if not specified
+    uvicorn.run(app, host="0.0.0.0", port=port)
 class WorklogQuery(BaseModel):
     # api_base_url: str
     # api_token: str
@@ -72,3 +76,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def read_index():
     return FileResponse('templates/index.html')
+
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if not specified
+    uvicorn.run(app, host="0.0.0.0", port=port)
