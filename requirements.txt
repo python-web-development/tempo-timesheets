@@ -3,3 +3,4 @@ requests
 python-dotenv
 flask_swagger_ui
 flask-cors
+uvicorn
