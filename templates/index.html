@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worklogs Display</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href="/docs"><i class="fas fa-book"></i> Documentation</a>
+            <a href="https://github.com/your-username/your-repo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <div class="content">
+            <div class="top-nav">JIRA: Tempo Worklogs Data</div>
+            <div class="main-content">
+                <h4>Select Classification to get data from Jira Tempo sheets.</h4>
+                <button onclick="fetchWorklogs('Employee')">Load Worklogs as Employee-$50/hr</button>
+                <button onclick="fetchWorklogs('Contractor')">Load Worklogs as Contractor-$75/hr</button><br>
+                <div class="total-accrual-container">
+                    <h2>Total Accrual:</h2>
+                    <span id="totalAccrual" class="total-accrual"><h3>$0.00</h3></span>
+                </div>
+                <div id="worklogsTableContainer"></div>
+                <div>
+                    <h3>Proccess for the Tempo Timesheets in Jira</h3>
+                    <ol>
+                        <li>Created a JIRA Account</li>
+                        <li>Added Tempo Timesheets extension from administration</li>
+                        <li>Added Some Logs</li>
+                        <li>Created API token from settings</li>
+                        <li>Created FastApi application with an API to get those logs</li>
+                        <li>Calculatiing the total billing from the hours logged</li>
+                      </ol>  
+                    <p>This image shows how Tempo Timesheets are logged and managed in Jira.</p>
+                    <img src="/static/tempo.png" alt="Tempo Timesheets in Jira" width="300" height="auto">
+                </div>
+            </div>
+            <div class="footer">
+                Created by Sai Vineela Peddinti. You can Contact me at my Mobile : 2673575519 or my email: <a href="mailto:vineelapeddinti@gmail.com">vineelapeddinti@gmail.com</a>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
