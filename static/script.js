@@ -5,7 +5,7 @@ const rate_info = {
 };
 
 function fetchWorklogs(classification) {
-    fetch('http://localhost:8000/fetch_worklogs/', {
+    fetch('https://tempo-timesheets.onrender.com/fetch_worklogs/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
