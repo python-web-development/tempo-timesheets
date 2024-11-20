@@ -1,4 +1,5 @@
 # Use an official lightweight Python image.
+# https://hub.docker.com/_/python
 FROM python:3.9-slim
 
 # Set the working directory in the container
@@ -13,8 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Define environment variable for the port and set a default value
-ENV PORT=5000
+# Define environment variable
+ENV PORT 5000
 
-# Run uvicorn to serve the application. Adjust host and port as necessary.
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+# Use Gunicorn as the production server. Adjust the worker number as necessary.
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "${PORT:-5000}"]
